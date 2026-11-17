@@ -37,6 +37,7 @@ class SavingsAccount(BankAccount):
     def withdraw(self, amount):
         if not super().withdraw(amount):
             return False
+
         fee = min(amount * 0.01, self.balance)
         if fee > 0:
             super().withdraw(fee)
